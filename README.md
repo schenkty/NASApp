@@ -36,3 +36,6 @@ Since this is the capstone project, you will be graded on the following:
 * App performance is good (e.g. User does not need to wait more than a couple of seconds for each action)
 * Code is organized with with useful comments
 
+
+# How to run
+Run ``pod install`` then open xcodeworkspace
