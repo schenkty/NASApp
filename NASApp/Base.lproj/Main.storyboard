@@ -432,7 +432,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFr-EO-6h0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="980"/>
+            <point key="canvasLocation" x="996" y="979"/>
         </scene>
         <!--Explore Earth-->
         <scene sceneID="3VY-Yn-s68">
@@ -500,7 +500,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apv-us-XNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="980"/>
+            <point key="canvasLocation" x="1700" y="978"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uls-ZB-D9B">

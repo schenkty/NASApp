@@ -11,7 +11,7 @@ import UIKit
 class RoversTableViewController: UITableViewController {
     
     var roverItemsCollection: ([RoverItem], [RoverItem], [RoverItem]) = ([],[],[])
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,10 +33,10 @@ class RoversTableViewController: UITableViewController {
             if let nextVC = segue.destination as? MarsPhotoCollectionViewController {
                 switch indexPath.row {
                 case 0:
-                    nextVC.selectedRover = Rover.curiosity
+                    nextVC.selectedRover = Rover.opportunity
                     nextVC.roverItems = self.roverItemsCollection.0
                 case 1:
-                    nextVC.selectedRover = Rover.opportunity
+                    nextVC.selectedRover = Rover.curiosity
                     nextVC.roverItems = self.roverItemsCollection.1
                 case 2:
                     nextVC.selectedRover = Rover.spirit
@@ -46,10 +46,6 @@ class RoversTableViewController: UITableViewController {
             }
         }
     }
-    
-    //----------------------
-    // MARK: - Methods
-    //----------------------
     
     ///func that pull items for all the rovers
     func pullingForAllRovers() {
@@ -61,33 +57,25 @@ class RoversTableViewController: UITableViewController {
     // function tht pulls the items for the selected rover
     func pullingRoverItems(rover: Rover) {
         
-        //FIXME: - "Sol" should not be hardocoded
-        
-        /* ------------
-         for this mvp implementation the sol is hardcoded, in the future
-         the user will have the possibility to choose the sol */
         var sol = 0
         switch rover {
-        case .curiosity: sol = 1634
         case .opportunity: sol = 4650
+        case .curiosity: sol = 1634
         case .spirit: sol = 500
         }
-        /* ------------ */
         
         NetworkManager.pullRoversPhotos(rover: rover, sol: sol) {rover, json in
             for roverItem in json["photos"] {
                 do {
                     switch rover {
-                    case .curiosity: try self.roverItemsCollection.0.append(RoverItem(json: roverItem.1))
-                    case .opportunity: try self.roverItemsCollection.1.append(RoverItem(json: roverItem.1))
+                    case .opportunity: try self.roverItemsCollection.0.append(RoverItem(json: roverItem.1))
+                    case .curiosity: try self.roverItemsCollection.1.append(RoverItem(json: roverItem.1))
                     case .spirit: try self.roverItemsCollection.2.append(RoverItem(json: roverItem.1))
                     }
                 } catch  let error {
                     self.showAlert(title: "Error", message: "\(error)")
                 }
             }
-            
-            
         }
     }
     
