@@ -40,4 +40,4 @@ Since this is the capstone project, you will be graded on the following:
 # How to run
 Run ``pod install`` then open xcodeworkspace
 
-Tap on any image inside the daily explore or from a rover to edit it or send it along to your friends!
+Tap on any image inside the daily explore or from a rover to edit the image or send it along to your friends!
