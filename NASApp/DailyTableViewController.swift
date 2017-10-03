@@ -21,7 +21,6 @@ class DailyTableViewController: UITableViewController, PhotoEditorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-    
     }
     
     func setLayout() {

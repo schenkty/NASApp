@@ -47,7 +47,7 @@ class RoversTableViewController: UITableViewController {
         }
     }
     
-    ///func that pull items for all the rovers
+    // func that pull items for all the rovers
     func pullingForAllRovers() {
         self.pullingRoverItems(rover: Rover.curiosity)
         self.pullingRoverItems(rover: Rover.opportunity)
